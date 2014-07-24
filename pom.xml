@@ -2,19 +2,25 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>gtweb-batch</groupId>
-    <artifactId>gtweb-batch</artifactId>
-    <version>0.1.1-SNAPSHOT</version>
+    <groupId>com.taskroo</groupId>
+    <artifactId>taskroo-batch</artifactId>
+    <version>0.4.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>gtweb-batch</name>
-    <url>http://maven.apache.org</url>
+    <name>taskroo-batch</name>
+    <url>http://aetas.pl</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <dependencies>
+        <!-- TaskRoo modules -->
+        <dependency>
+            <groupId>com.taskroo</groupId>
+            <artifactId>taskroo-mongo-connector</artifactId>
+            <version>0.4.0-SNAPSHOT</version>
+        </dependency>
         <!-- Useful tools -->
         <dependency>
             <groupId>joda-time</groupId>
@@ -24,6 +30,11 @@
         <dependency>
             <groupId>com.google.inject</groupId>
             <artifactId>guice</artifactId>
+            <version>4.0-beta</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.inject.extensions</groupId>
+            <artifactId>guice-spring</artifactId>
             <version>4.0-beta</version>
         </dependency>
         <dependency>
@@ -115,5 +126,16 @@
             </plugin>
         </plugins>
     </build>
+
+    <repositories>
+        <repository>
+            <id>taskroo-mongo-connector-mvn-repo</id>
+            <url>https://raw.github.com/maniekq/taskroo-mongo-connector/mvn-repo/</url>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+        </repository>
+    </repositories>
 
 </project>

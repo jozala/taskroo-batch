@@ -1,15 +1,15 @@
 package pl.aetas.gtweb.batch.domain;
 
 public class User {
-    private final long id;
+    private final Object id;
     private final String email;
 
-    public User(long id, String email) {
+    public User(Object id, String email) {
         this.id = id;
         this.email = email;
     }
 
-    public long getId() {
+    public Object getId() {
         return id;
     }
 
