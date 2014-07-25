@@ -1,6 +1,6 @@
-package pl.aetas.gtweb.batch.dao;
+package com.taskroo.batch.dao;
 
-import pl.aetas.gtweb.batch.domain.User;
+import com.taskroo.batch.domain.User;
 
 import java.util.List;
 

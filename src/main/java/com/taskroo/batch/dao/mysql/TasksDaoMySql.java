@@ -1,10 +1,10 @@
-package pl.aetas.gtweb.batch.dao.mysql;
+package com.taskroo.batch.dao.mysql;
 
 import org.joda.time.DateTime;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
-import pl.aetas.gtweb.batch.dao.TasksDao;
-import pl.aetas.gtweb.batch.domain.Task;
+import com.taskroo.batch.dao.TasksDao;
+import com.taskroo.batch.domain.Task;
 
 import javax.inject.Inject;
 import java.sql.ResultSet;

@@ -1,13 +1,13 @@
-package pl.aetas.gtweb.batch;
+package com.taskroo.batch;
 
 
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
-import pl.aetas.gtweb.batch.dao.TasksDao;
-import pl.aetas.gtweb.batch.dao.UsersDao;
-import pl.aetas.gtweb.batch.domain.Task;
-import pl.aetas.gtweb.batch.domain.User;
+import com.taskroo.batch.dao.TasksDao;
+import com.taskroo.batch.dao.UsersDao;
+import com.taskroo.batch.domain.Task;
+import com.taskroo.batch.domain.User;
 
 import javax.inject.Inject;
 import javax.mail.MessagingException;

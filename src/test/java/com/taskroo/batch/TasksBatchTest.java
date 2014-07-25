@@ -1,4 +1,4 @@
-package pl.aetas.gtweb.batch;
+package com.taskroo.batch;
 
 import com.google.inject.Guice;
 import com.google.inject.Injector;
@@ -10,6 +10,6 @@ public class TasksBatchTest {
         Injector injector = Guice.createInjector(new MyModule());
         TasksBatch tasksBatch = injector.getInstance(TasksBatch.class);
 
-        tasksBatch.sendEmailsToUsersWithDueDateTasks();
+//        tasksBatch.sendEmailsToUsersWithDueDateTasks();
     }
 }

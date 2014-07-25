@@ -1,12 +1,12 @@
-package pl.aetas.gtweb.batch.dao.mongo;
+package com.taskroo.batch.dao.mongo;
 
 import com.google.inject.name.Named;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
-import pl.aetas.gtweb.batch.dao.UsersDao;
-import pl.aetas.gtweb.batch.domain.User;
+import com.taskroo.batch.dao.UsersDao;
+import com.taskroo.batch.domain.User;
 
 import javax.inject.Inject;
 import java.util.LinkedList;

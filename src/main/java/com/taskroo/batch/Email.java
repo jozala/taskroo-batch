@@ -1,11 +1,10 @@
-package pl.aetas.gtweb.batch;
+package com.taskroo.batch;
 
 import org.joda.time.DateTime;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.mail.javamail.MimeMessageHelper;
 
-import javax.inject.Inject;
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 

@@ -1,10 +1,10 @@
-package pl.aetas.gtweb.batch.dao.mongo;
+package com.taskroo.batch.dao.mongo;
 
 import com.google.inject.Inject;
 import com.mongodb.*;
 import org.joda.time.DateTime;
-import pl.aetas.gtweb.batch.dao.TasksDao;
-import pl.aetas.gtweb.batch.domain.Task;
+import com.taskroo.batch.dao.TasksDao;
+import com.taskroo.batch.domain.Task;
 
 import javax.inject.Named;
 import java.util.Date;

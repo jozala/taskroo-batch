@@ -1,9 +1,9 @@
-package pl.aetas.gtweb.batch.dao.mysql;
+package com.taskroo.batch.dao.mysql;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
-import pl.aetas.gtweb.batch.dao.UsersDao;
-import pl.aetas.gtweb.batch.domain.User;
+import com.taskroo.batch.dao.UsersDao;
+import com.taskroo.batch.domain.User;
 
 import javax.inject.Inject;
 import java.sql.ResultSet;

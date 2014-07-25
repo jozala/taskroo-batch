@@ -1,4 +1,4 @@
-package pl.aetas.gtweb.batch.domain;
+package com.taskroo.batch.domain;
 
 import org.joda.time.DateTime;
 

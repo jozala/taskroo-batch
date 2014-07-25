@@ -1,4 +1,4 @@
-package pl.aetas.gtweb.batch;
+package com.taskroo.batch;
 
 import com.google.inject.AbstractModule;
 import com.google.inject.name.Names;
@@ -9,10 +9,10 @@ import org.apache.commons.dbcp.BasicDataSource;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.jdbc.core.JdbcTemplate;
-import pl.aetas.gtweb.batch.dao.TasksDao;
-import pl.aetas.gtweb.batch.dao.UsersDao;
-import pl.aetas.gtweb.batch.dao.mongo.TasksDaoMongo;
-import pl.aetas.gtweb.batch.dao.mongo.UsersDaoMongo;
+import com.taskroo.batch.dao.TasksDao;
+import com.taskroo.batch.dao.UsersDao;
+import com.taskroo.batch.dao.mongo.TasksDaoMongo;
+import com.taskroo.batch.dao.mongo.UsersDaoMongo;
 
 public class MyModule extends AbstractModule {
     @Override

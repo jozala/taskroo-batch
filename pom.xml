@@ -95,7 +95,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>pl.aetas.gtweb.batch.TasksBatch</mainClass>
+                            <mainClass>com.taskroo.batch.TasksBatch</mainClass>
                             <addClasspath>true</addClasspath>
                         </manifest>
                     </archive>
@@ -107,7 +107,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>pl.aetas.gtweb.batch.TasksBatch</mainClass>
+                            <mainClass>com.taskroo.batch.TasksBatch</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
