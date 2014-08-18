@@ -58,7 +58,7 @@ public class TasksBatch
         for (Task task : tasks) {
             emailContent += "- " + task.getTitle() + " (" + task.getDueDate().toString("yyyy-MM-dd") + ")\n";
         }
-        emailContent += "\nYours truly,\nGTWeb";
+        emailContent += "\nYours truly,\nTaskRoo";
         return new Email(sender, user.getEmail(), emailContent);
     }
 }
