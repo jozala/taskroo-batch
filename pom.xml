@@ -4,7 +4,7 @@
 
     <groupId>com.taskroo</groupId>
     <artifactId>taskroo-batch</artifactId>
-    <version>0.5.0</version>
+    <version>0.5.1</version>
     <packaging>jar</packaging>
 
     <name>taskroo-batch</name>

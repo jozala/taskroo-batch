@@ -27,6 +27,7 @@ public class Email {
         MimeMessage message = sender.createMimeMessage();
 
         MimeMessageHelper helper = new MimeMessageHelper(message, true, "UTF-8");
+        helper.setFrom("dailyroo@taskroo.com");
         helper.setSubject("TaskRoo due date tasks for " + DateTime.now().toString("yyyy-MM-dd"));
         helper.setTo(recipient);
         helper.setText(content);
