@@ -2,7 +2,6 @@ package com.taskroo.batch;
 
 import org.joda.time.DateTime;
 import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.mail.javamail.MimeMessageHelper;
 
 import javax.mail.MessagingException;
@@ -14,12 +13,10 @@ public class Email {
     private final String recipient;
     private final String content;
 
-    public Email(JavaMailSenderImpl sender, String recipient, String content) {
+    public Email(JavaMailSender sender, String recipient, String content) {
         this.sender = sender;
         this.recipient = recipient;
         this.content = content;
-
-        sender.setHost("localhost");
     }
 
     public void send() throws MessagingException {

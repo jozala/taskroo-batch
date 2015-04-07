@@ -4,15 +4,17 @@ import com.google.inject.AbstractModule;
 import com.google.inject.name.Names;
 import com.google.inject.spring.SpringIntegration;
 import com.mongodb.DBCollection;
+import com.taskroo.batch.dao.TasksDao;
+import com.taskroo.batch.dao.UsersDao;
+import com.taskroo.batch.dao.mongo.TasksDaoMongo;
+import com.taskroo.batch.dao.mongo.UsersDaoMongo;
 import com.taskroo.mongo.CollectionsFactory;
 import org.apache.commons.dbcp.BasicDataSource;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.jdbc.core.JdbcTemplate;
-import com.taskroo.batch.dao.TasksDao;
-import com.taskroo.batch.dao.UsersDao;
-import com.taskroo.batch.dao.mongo.TasksDaoMongo;
-import com.taskroo.batch.dao.mongo.UsersDaoMongo;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
 
 public class MyModule extends AbstractModule {
     @Override
@@ -41,8 +43,21 @@ public class MyModule extends AbstractModule {
 
         JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
         bind(JdbcTemplate.class).toInstance(jdbcTemplate);
+        bind(JavaMailSender.class).toInstance(javaMailSender());
 
         bind(TasksDao.class).to(TasksDaoMongo.class);
         bind(UsersDao.class).to(UsersDaoMongo.class);
+    }
+
+    public JavaMailSender javaMailSender() {
+
+        JavaMailSenderImpl jm = new JavaMailSenderImpl();
+        jm.setPort(587);
+        jm.setProtocol("smtp");
+        jm.setHost("in-v3.mailjet.com");
+        jm.setUsername(System.getProperty("EMAIL_LOGIN"));
+        jm.setPassword(System.getProperty("EMAIL_PASSWORD"));
+
+        return jm;
     }
 }

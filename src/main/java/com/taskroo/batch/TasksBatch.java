@@ -3,11 +3,11 @@ package com.taskroo.batch;
 
 import com.google.inject.Guice;
 import com.google.inject.Injector;
-import org.springframework.mail.javamail.JavaMailSenderImpl;
 import com.taskroo.batch.dao.TasksDao;
 import com.taskroo.batch.dao.UsersDao;
 import com.taskroo.batch.domain.Task;
 import com.taskroo.batch.domain.User;
+import org.springframework.mail.javamail.JavaMailSender;
 
 import javax.inject.Inject;
 import javax.mail.MessagingException;
@@ -18,7 +18,7 @@ public class TasksBatch
 {
     private final TasksDao tasksDao;
     private final UsersDao usersDao;
-    private final JavaMailSenderImpl sender;
+    private final JavaMailSender sender;
 
     public static void main(String[] args) throws MessagingException {
         Injector injector = Guice.createInjector(new MyModule());
@@ -28,7 +28,7 @@ public class TasksBatch
     }
 
     @Inject
-    public TasksBatch(TasksDao tasksDao, UsersDao usersDao, JavaMailSenderImpl sender) {
+    public TasksBatch(TasksDao tasksDao, UsersDao usersDao, JavaMailSender sender) {
         this.tasksDao = tasksDao;
         this.usersDao = usersDao;
         this.sender = sender;
