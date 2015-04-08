@@ -9,22 +9,14 @@ import com.taskroo.batch.dao.UsersDao;
 import com.taskroo.batch.dao.mongo.TasksDaoMongo;
 import com.taskroo.batch.dao.mongo.UsersDaoMongo;
 import com.taskroo.mongo.CollectionsFactory;
-import org.apache.commons.dbcp.BasicDataSource;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
 
 public class MyModule extends AbstractModule {
     @Override
     protected void configure() {
-        BasicDataSource dataSource = new BasicDataSource();
-        dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/aetas_gtweb");
-        dataSource.setUsername("mariusz");
-        dataSource.setPassword("fckgwrhqq2");
-        dataSource.setDefaultReadOnly(true);
 
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:/mongo-connector-context.xml");
         SpringIntegration.bindAll(binder(), applicationContext);
@@ -41,8 +33,6 @@ public class MyModule extends AbstractModule {
                 .annotatedWith(Names.named("UsersDBCollection"))
                 .toInstance(usersCollection);
 
-        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
-        bind(JdbcTemplate.class).toInstance(jdbcTemplate);
         bind(JavaMailSender.class).toInstance(javaMailSender());
 
         bind(TasksDao.class).to(TasksDaoMongo.class);
