@@ -29,6 +29,7 @@ public class Email {
         helper.setTo(recipient);
         helper.setText(content);
 
+        System.out.println("Sending email to: " + recipient);
         sender.send(message);
 
     }

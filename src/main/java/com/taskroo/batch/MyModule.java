@@ -55,8 +55,8 @@ public class MyModule extends AbstractModule {
         jm.setPort(587);
         jm.setProtocol("smtp");
         jm.setHost("in-v3.mailjet.com");
-        jm.setUsername(System.getProperty("EMAIL_LOGIN"));
-        jm.setPassword(System.getProperty("EMAIL_PASSWORD"));
+        jm.setUsername(System.getenv("EMAIL_LOGIN"));
+        jm.setPassword(System.getenv("EMAIL_PASSWORD"));
 
         return jm;
     }
